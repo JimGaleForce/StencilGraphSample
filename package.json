@@ -1,0 +1,27 @@
+{
+  "name": "tabs-ionic",
+  "private": true,
+  "version": "0.0.1",
+  "description": "tabs-ionic",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watch"
+  },
+  "dependencies": {
+    "@ionic/core": "^6.5.1",
+    "@sme.up/ketchup": "^7.0.0",
+    "d3": "^7.8.2",
+    "d3-sankey": "^0.12.3",
+    "geojson": "^0.5.0"
+  },
+  "devDependencies": {
+    "@stencil/core": "^3.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}
