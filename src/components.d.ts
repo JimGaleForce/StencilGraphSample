@@ -15,6 +15,9 @@ export namespace Components {
     }
     interface PageAbout {
     }
+    interface SignalProcessing {
+        "params": { numPoints: number, frequency: number, amplitude: number };
+    }
 }
 declare global {
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
@@ -41,11 +44,18 @@ declare global {
         prototype: HTMLPageAboutElement;
         new (): HTMLPageAboutElement;
     };
+    interface HTMLSignalProcessingElement extends Components.SignalProcessing, HTMLStencilElement {
+    }
+    var HTMLSignalProcessingElement: {
+        prototype: HTMLSignalProcessingElement;
+        new (): HTMLSignalProcessingElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "page-about": HTMLPageAboutElement;
+        "signal-processing": HTMLSignalProcessingElement;
     }
 }
 declare namespace LocalJSX {
@@ -58,11 +68,15 @@ declare namespace LocalJSX {
     }
     interface PageAbout {
     }
+    interface SignalProcessing {
+        "params"?: { numPoints: number, frequency: number, amplitude: number };
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "page-about": PageAbout;
+        "signal-processing": SignalProcessing;
     }
 }
 export { LocalJSX as JSX };
@@ -73,6 +87,7 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "signal-processing": LocalJSX.SignalProcessing & JSXBase.HTMLAttributes<HTMLSignalProcessingElement>;
         }
     }
 }
