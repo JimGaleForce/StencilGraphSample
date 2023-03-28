@@ -17,6 +17,7 @@ declare global {
 export class AppHome {
   @State() params: { numPoints: number, frequency: number, amplitude: number } = { numPoints: 200, frequency: 100, amplitude: 50 };
 
+  theChart: any;
   codeEditorEl1: HTMLDivElement;
   codeEditor1: EditorView;
   source1text = 'hello world';
@@ -113,7 +114,11 @@ export class AppHome {
       },
     };
 
-    new (window as any).Chart(chartElement, {
+    if (typeof this.theChart != 'undefined') {
+      this.theChart.destroy();
+    }
+
+    this.theChart = new (window as any).Chart(chartElement, {
       type: 'line',
       data: data,
       options: options,
