@@ -65,13 +65,18 @@ export class AppHome {
     (window as any).brython();
 
     // Call the Python function and plot the result
-    try {
-      const t_vals = (window as any).t_vals;
-      const x_vals = (window as any).x_vals;
-      this.createChart(t_vals, x_vals);
-    } catch (error) {
-      alert(`error: ${error.message}`);
-    }
+    window.setTimeout(() => {
+      try {
+        const t_vals = (window as any).t_vals;
+        const x_vals = (window as any).x_vals;
+        this.createChart(t_vals, x_vals);
+
+      } catch (error) {
+        alert(`error: ${error.message}`);
+      }
+
+    }, 2000);
+
 
   }
 
