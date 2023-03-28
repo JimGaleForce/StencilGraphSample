@@ -73,7 +73,7 @@ export class AppHome {
         this.createChart(t_vals, x_vals);
 
       } catch (error) {
-        alert(`error: ${error.message}`);
+        alert(`error: ${error.message}`);        
       }
 
     }, 2000);
@@ -153,14 +153,7 @@ export class AppHome {
         </ion-grid>
 
         <div id="pythonContainer">
-          <script type="text/python">
-            def my_function():
-            return "Hello from Python!"
-
-            # Call the function and store the result in a JS variable
-            from browser import window
-            window.my_function_result = my_function()
-          </script>
+ 
         </div>
 
         <div id="pythonOutput">
